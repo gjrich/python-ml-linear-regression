@@ -9,11 +9,14 @@ from typing import List, Tuple
 
 # External Packages (must be installed)
 # Use requirements.txt and list 
-# numpy scipy statsmodels one per line
+# One package per line
 
 import numpy as np
 from scipy import stats
 import statsmodels.api as sm
+
+# Import the LinearRegression class from scikit-learn
+from sklearn.linear_model import LinearRegression
 
 ################################
 # Define Functions
@@ -42,6 +45,22 @@ def scipy_linear_regression(X: List[float], y: List[float]) -> Tuple[float, floa
     slope, intercept, _, _, _ = stats.linregress(X, y)
     return slope, intercept
 
+
+# Define a function for linear regression using scikit-learn
+def sklearn_linear_regression(X: List[float], y: List[float]) -> Tuple[float, float]:
+    # Create a LinearRegression model
+    model = LinearRegression()
+    
+    # Fit the model to the data
+    model.fit(np.array(X).reshape(-1, 1), y)
+    
+    # Get the slope and intercept from the model
+    slope = model.coef_[0]
+    intercept = model.intercept_
+
+    # return the slope and interface to whatever called this function
+    return slope, intercept
+
 ################################
 # Conditional Execution 
 ################################
@@ -61,7 +80,7 @@ if __name__ == "__main__":
     print("==========================================")
   
     m1, b1 = std_lib_statistics_linear_regression(xlist, ylist)
-    print(f"Slope: {m1}")
+    print(f"Slope:     {m1}")
     print(f"Intercept: {b1}\n")
     
     print("==========================================")
@@ -69,7 +88,7 @@ if __name__ == "__main__":
     print("==========================================")
   
     m2, b2 = numpy_linear_regression(xlist, ylist)
-    print(f"Slope: {m2}")
+    print(f"Slope:     {m2}")
     print(f"Intercept: {b2}\n")
   
     print("==========================================")
@@ -77,15 +96,24 @@ if __name__ == "__main__":
     print("==========================================")
 
     m3, b3 = scipy_linear_regression(xlist, ylist)
-    print(f"Slope: {m3}")
+    print(f"Slope:     {m3}")
     print(f"Intercept: {b3}\n")
-  
+
+    print("==========================================")
+    print("\nUsing sklearn_linear_regression:")
+    print("==========================================")
+    
+    m4, b4 = sklearn_linear_regression(xlist, ylist)
+    print(f"Slope:     {m4}")
+    print(f"Intercept: {b4}\n")
+      
     print("==========================================")
     print("\nUsing statsmodels_linear_regression:")
     print("==========================================")
 
     summary = statsmodels_linear_regression(xlist, ylist)
     print(summary)
+
     print("COMPLETE. ================================")
 
     
