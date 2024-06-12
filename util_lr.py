@@ -30,24 +30,9 @@ ylist: List[float] = [2.1, 3.2, 6.5, 8.3, 9.4, 12.8, 13.7, 16.4]
 xlist2: List[float] = [1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0]
 ylist2: List[float] = [2.1, 3.2, 6.5, 8.3, 9.4, 12.8, 13.7, 100.0] 
 
-################################
-# Define A List of Test Tuples
-################################
-
-# List of functions to test
-functions = [
-    ("Std Lib Statistics", statistics.linear_regression, "LMS"),
-    ("NumPy", numpy_linear_regression, "LMS"),
-    ("SciPy", scipy_linear_regression, "LMS"),
-    ("Statsmodels", statsmodels_linear_regression, "LMS"),
-    ("Scikit-Learn", sklearn_linear_regression, "LMS"),
-    ("Scikit-Learn Huber", sklearn_huber_regression, "Robust"),
-    ("Scikit-Learn RANSAC", sklearn_ransac_regression, "Robust")
-]
-
 
 ################################
-# Define Functions
+# Define function_list
 ################################
 
 def numpy_linear_regression(X: List[float], y: List[float]) -> Tuple[float, float]:
@@ -103,6 +88,23 @@ def show_sm_summary(X: List[float], y: List[float]) -> None:
     print(sm_model.summary())
 
 ################################
+# Define A List of Test Tuples
+################################
+
+# List of functions to test
+function_list = [
+    ("Std Lib Statistics", statistics.linear_regression, "LMS"),
+    ("NumPy", numpy_linear_regression, "LMS"),
+    ("SciPy", scipy_linear_regression, "LMS"),
+    ("Statsmodels", statsmodels_linear_regression, "LMS"),
+    ("Scikit-Learn", sklearn_linear_regression, "LMS"),
+    ("Scikit-Learn Huber", sklearn_huber_regression, "Robust"),
+    ("Scikit-Learn RANSAC", sklearn_ransac_regression, "Robust")
+]
+
+
+
+################################
 # Conditional Execution 
 ################################
 
@@ -112,12 +114,12 @@ if __name__ == "__main__":
     results = []
 
     # Run each function and store results for Data Set 1
-    for name, func, method in functions:
+    for name, func, method in function_list:
         slope, intercept = func(xlist, ylist)
         results.append({"Method": name, "Type": method, "Slope": slope, "Intercept": intercept, "Dataset": "1"})
 
     # Run each function and store results for Data Set 2
-    for name, func, method in functions:
+    for name, func, method in function_list:
         slope, intercept = func(xlist2, ylist2)
         results.append({"Method": name, "Type": method, "Slope": slope, "Intercept": intercept, "Dataset": "2"})
 
