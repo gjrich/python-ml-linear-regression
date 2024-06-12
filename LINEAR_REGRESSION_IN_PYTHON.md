@@ -51,8 +51,6 @@ It's more accurate, but harder to calculate, and can take longer.
 
 Here's some popular options that perform this more robust regression. 
 
-## Libraries Supporting Robust Regression (Ordered by Popularity)
-
 | **Library**      | **In Standard Library** | **Method Used**                                      | **Example Function**                                  |
 |------------------|-------------------------|------------------------------------------------------|-------------------------------------------------------|
 | `scikit-learn`   | No                      | Huber Regression                                     | `HuberRegressor().fit(X, y)`                          |
