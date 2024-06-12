@@ -17,6 +17,36 @@ import statsmodels.api as sm
 from sklearn.linear_model import LinearRegression, HuberRegressor, RANSACRegressor
 
 ################################
+# Define Sample Data Sets
+################################
+
+# Data Set 1
+# Two lists of floating point numbers, one for x and one for y
+xlist: List[float] = [1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0]
+ylist: List[float] = [2.1, 3.2, 6.5, 8.3, 9.4, 12.8, 13.7, 16.4]
+
+# Data Set 2
+# Two lists of floating point numbers, one for x and one for y
+xlist2: List[float] = [1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0]
+ylist2: List[float] = [2.1, 3.2, 6.5, 8.3, 9.4, 12.8, 13.7, 100.0] 
+
+################################
+# Define A List of Test Tuples
+################################
+
+# List of functions to test
+functions = [
+    ("Std Lib Statistics", statistics.linear_regression, "LMS"),
+    ("NumPy", numpy_linear_regression, "LMS"),
+    ("SciPy", scipy_linear_regression, "LMS"),
+    ("Statsmodels", statsmodels_linear_regression, "LMS"),
+    ("Scikit-Learn", sklearn_linear_regression, "LMS"),
+    ("Scikit-Learn Huber", sklearn_huber_regression, "Robust"),
+    ("Scikit-Learn RANSAC", sklearn_ransac_regression, "Robust")
+]
+
+
+################################
 # Define Functions
 ################################
 
@@ -77,26 +107,6 @@ def show_sm_summary(X: List[float], y: List[float]) -> None:
 ################################
 
 if __name__ == "__main__":
-    # Data Set 1
-    # Two lists of floating point numbers, one for x and one for y
-    xlist: List[float] = [1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0]
-    ylist: List[float] = [2.1, 3.2, 6.5, 8.3, 9.4, 12.8, 13.7, 16.4]
-
-    # Data Set 2
-    # Two lists of floating point numbers, one for x and one for y
-    xlist2: List[float] = [1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0]
-    ylist2: List[float] = [2.1, 3.2, 6.5, 8.3, 9.4, 12.8, 13.7, 100.0]  # The last point is an outlier
-
-    # List of functions to test
-    functions = [
-        ("Std Lib Statistics", statistics.linear_regression, "LMS"),
-        ("NumPy", numpy_linear_regression, "LMS"),
-        ("SciPy", scipy_linear_regression, "LMS"),
-        ("Statsmodels", statsmodels_linear_regression, "LMS"),
-        ("Scikit-Learn", sklearn_linear_regression, "LMS"),
-        ("Scikit-Learn Huber", sklearn_huber_regression, "Robust"),
-        ("Scikit-Learn RANSAC", sklearn_ransac_regression, "Robust")
-    ]
 
     # Results list to store each result as a dictionary
     results = []
