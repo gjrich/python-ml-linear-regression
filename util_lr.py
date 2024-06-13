@@ -91,7 +91,8 @@ def show_sm_summary(X: List[float], y: List[float]) -> None:
 # Define A List of Test Tuples
 ################################
 
-# List of functions to test
+# List of functions, each a tuple with information
+
 function_list = [
     ("Std Lib Statistics", statistics.linear_regression, "LMS"),
     ("NumPy", numpy_linear_regression, "LMS"),
@@ -102,13 +103,30 @@ function_list = [
     ("Scikit-Learn RANSAC", sklearn_ransac_regression, "Robust")
 ]
 
+# Dictionary (key-value pairs) of functions
+# Map a short string to the actual function name
 
+function_mapping = {
+    "stat": statistics.linear_regression,
+    "numpy": numpy_linear_regression,
+    "scipy": scipy_linear_regression,
+    "statsmodels": statsmodels_linear_regression,
+    "sklearn": sklearn_linear_regression,
+    "huber": sklearn_huber_regression,
+    "ransac": sklearn_ransac_regression
+}
 
 ################################
 # Conditional Execution 
 ################################
 
 if __name__ == "__main__":
+
+    ################################
+    # If we run this module as a script, then test our functions
+    # Make sure these functions work correctly
+    # before importing these functions into another module.
+    ################################
 
     # Results list to store each result as a dictionary
     results = []
