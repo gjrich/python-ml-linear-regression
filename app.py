@@ -49,7 +49,7 @@ function_options_dict = {
 ################################
 
 # Use the PyShiny ui.page_opts() method to set the title 
-ui.page_opts(title="Why Do We Square Things in Linear Regression?")
+ui.page_opts(title="Why Do We Square Residuals in Linear Regression?")
 
 with ui.sidebar(bg="#EEF2F8"):  
     "User Selections" 
