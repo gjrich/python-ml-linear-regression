@@ -1,5 +1,5 @@
 ################################
-# util_lr module - import into app.py
+# utils module - import into app.py
 ################################
 
 ################################
@@ -120,6 +120,58 @@ function_mapping = {
     "ransac": sklearn_ransac_regression
 }
 
+description_mapping = {
+    "stat": """Standard Library statistics.linear_regression() uses least squares regression (LMS).""",
+    "numpy": """NumPy uses least squares regression (LMS) by directly computing the inverse of the matrix.""",
+    "scipy": """SciPy's stats.linregress uses least squares regression (LMS).""",
+    "statsmodels": """Statsmodels uses OLS (Ordinary Least Squares) method to perform a least squares regression (LMS).""",
+    "sklearn": """Scikit-Learn LinearRegression uses least squares regression (LMS).""",
+    "huber": """Scikit-Learn's HuberRegressor uses robust regression with a combination of squared loss for inliers and absolute loss for outliers, making it less sensitive to outliers than LMS.""",
+    "ransac": """Scikit-Learn's RANSACRegressor uses robust regression with Absolute Deviation, iteratively fits the model, and removes outliers, making it particularly effective for datasets with many outliers."""
+}
+
+def get_slope_and_intercept(X: List[float], y: List[float], method: str) -> Tuple[float, float]:
+    ''' Provide a simple function that will perform the chosen method (a string).'''
+    match method:
+        case "stat":
+            return statistics.linear_regression(X, y)
+        case "numpy":
+            return numpy_linear_regression(X, y)
+        case "scipy":
+            return scipy_linear_regression(X, y)
+        case "statsmodels":
+            return statsmodels_linear_regression(X, y)
+        case "sklearn":
+            return sklearn_linear_regression(X, y)
+        case "huber":
+            return sklearn_huber_regression(X, y)
+        case "ransac":
+            return sklearn_ransac_regression(X, y)
+        case _:
+            raise ValueError(f"Unknown method: {method}")
+
+def get_description(method: str) -> str:
+    ''' Get description for given method.'''
+    match method:
+        case "stat":
+            return "decr"
+        case "numpy":
+            return  "decr"
+        case "scipy":
+            return  "decr"
+        case "statsmodels":
+            return  "decr"
+        case "sklearn":
+            return "decr"
+        case "huber":
+            return  "decr"
+        case "ransac":
+            return  "decr"
+        case _:
+            raise ValueError(f"Unknown method: {method}")
+
+
+
 ################################
 # Conditional Execution 
 ################################
@@ -163,3 +215,4 @@ if __name__ == "__main__":
 
     print("\nDetailed Summary for Statsmodels Linear Regression (Dataset 2):")
     show_sm_summary(xlist2, ylist2)
+
