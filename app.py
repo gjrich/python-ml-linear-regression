@@ -25,9 +25,9 @@ from shiny import render, reactive
 from shiny.express import ui, input
 from shinywidgets import render_plotly
 
-# Local module import - use util_lr
+# Local module import
 # list all the top-level variables and functions we need in app.py
-from util_lr import xlist, ylist, xlist2, ylist2, function_list, function_mapping, description_mapping, get_slope_and_intercept
+from utils import xlist, ylist, xlist2, ylist2, function_list, function_mapping, description_mapping, get_slope_and_intercept
 
 ################################
 # Define Global Variables
