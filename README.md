@@ -123,3 +123,16 @@ Many thanks to the creators, contributors, and maintainors for making these powe
 ## Screenshot Example 2 (Dataset 2)
 
 ![Example 2](images/example2-dataset2.png)
+
+## Historical Note
+
+Back in his 1970 book, "Statistical Problems and How To Solve Them", L.H. Longley-Cook noted (as a footnote on page 153):
+
+"The least squares line in not completely satisfactory because it gives too great a weight to extreme values. 
+Some writers have proposed the least distance line, when |D1| + |D2| + |D3| + |D4| + ... is a minimum.
+|D| is the distance taken as positive in each case.
+In the past, it has been difficult to caclulate this line because of the sign problem, but this can be overcome with modern computers."
+
+That was computing 50 years ago. Why are we still avoiding "difficult" absolute value calculations by squaring?
+
+
