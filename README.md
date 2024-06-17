@@ -112,6 +112,10 @@ Many thanks to the creators, contributors, and maintainors for making these powe
 
 ![Example 1](images/example1.png)
 
-## Screenshot Example 2
+## Screenshot Example 2 (Dataset 1)
 
 ![Example 2](images/example2-dataset1.png)
+
+## Screenshot Example 2 (Dataset 2)
+
+![Example 2](images/example2-dataset2.png)
