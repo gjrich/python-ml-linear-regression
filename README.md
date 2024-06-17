@@ -107,3 +107,11 @@ Many thanks to the creators, contributors, and maintainors for making these powe
 - scipy
 - statsmodels
 - scikit-learn
+
+## Screenshot Example 1
+
+![Example 1](images/example1.png)
+
+## Screenshot Example 2
+
+![Example 2](images/example2.png)
