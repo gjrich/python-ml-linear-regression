@@ -2,6 +2,8 @@
 
 > Why Do We Square Residuals in Linear Regression?
 
+![Why Do We Square Residuals in Linear Regression?](images/why-square-residuals.png)
+
 Exploring simple linear regression using Python (and PyShiny)
 
 ## Explore the PyShiny Playground
