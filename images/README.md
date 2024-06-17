@@ -1,6 +1,6 @@
 # Folder for Images and Supporting Information
 
-![Book](book.jpg)
+<img src="book.jpg" width="300">
 
 Statistical Problems and How to Solve Them
 
