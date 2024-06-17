@@ -40,7 +40,7 @@ Browser: Click in the Playgroud app.py tab. Select all the code in the app.py pl
 Paste the code from your clipboard (app_random.py as shown in this repo) into app.py in the Playground (CTRL V if Windows, or CMD V if Mac).
 Verify the code copied correctly. 
 
-Click the run arrow (▶) to see the updated app. 
+Click the run arrow (⏵) to see the updated app. 
 
 ## Example 2: Comparing Linear Regression Options
 
@@ -80,7 +80,7 @@ Browser: Click in the Playground code window. Add a new code file. Name the file
 Paste the code from your clipboard (utils.py as shown in this repo) into your new utils.py file in the Playground.
 Verify the code copied correctly.
 
-Click the run arrow (▶) to see the updated app. 
+Click the run arrow (⏵) to see the updated app. 
 
 ## Links to the Apps Running in Shinylive
 
