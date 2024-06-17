@@ -114,4 +114,4 @@ Many thanks to the creators, contributors, and maintainors for making these powe
 
 ## Screenshot Example 2
 
-![Example 2](images/example2.png)
+![Example 2](images/example2-dataset1.png)
