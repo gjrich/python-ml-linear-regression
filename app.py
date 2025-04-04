@@ -27,7 +27,7 @@ from shinywidgets import render_plotly
 
 # Local module import
 # list all the top-level variables and functions we need in app.py
-from utils import xlist, ylist, xlist2, ylist2, function_list, function_mapping, description_mapping, get_slope_and_intercept
+from utils import xlist, ylist, xlist2, ylist2, xlist3, ylist3, function_list, function_mapping, description_mapping, get_slope_and_intercept
 
 ################################
 # Define Global Variables
@@ -72,7 +72,8 @@ with ui.sidebar(bg="#EEF2F8"):
         "selected_dataset",
         "Choose a dataset:",
         {"1":"Dataset 1",
-        "2":"Dataset 2"},
+        "2":"Dataset 2",
+        "3":"Dataset 3"},
          selected="1"
     )
 
@@ -95,9 +96,11 @@ def selected_function_2():
 def getXY():
     if input.selected_dataset() == "1":
         return xlist, ylist
-    else:
+    elif input.selected_dataset() == "2":
         return xlist2, ylist2
-
+    else:
+        return xlist3, ylist3
+        
 ################################
 # Define & Render Output
 ################################
