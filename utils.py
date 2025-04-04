@@ -34,6 +34,12 @@ ylist: List[float] = [2.1, 3.2, 6.5, 8.3, 9.4, 12.8, 13.7, 16.4]
 xlist2: List[float] = [1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0]
 ylist2: List[float] = [2.1, 3.2, 6.5, 8.3, 9.4, 12.8, 13.7, 100.0] 
 
+# Data Set 3
+# Third lists of floating point numbers, one for x and one for y
+xlist3: List[float] = [1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0]
+ylist3: List[float] = [2.5, 4.0, 5.1, 5.9, 30.0, 8.1, 9.2, 10.5]
+
+
 
 ################################
 # Define function_list
@@ -197,6 +203,11 @@ if __name__ == "__main__":
         slope, intercept = func(xlist2, ylist2)
         results.append({"Method": name, "Type": method, "Slope": slope, "Intercept": intercept, "Dataset": "2"})
 
+    # Run each function and store results for Data Set 2
+    for name, func, method in function_list:
+        slope, intercept = func(xlist3, ylist3)
+        results.append({"Method": name, "Type": method, "Slope": slope, "Intercept": intercept, "Dataset": "3"})
+    
     # Write results to CSV file
     with open("linear_regression_results.csv", "w", newline="") as csvfile:
         fieldnames = ["Method", "Type", "Slope", "Intercept", "Dataset"]
@@ -216,3 +227,5 @@ if __name__ == "__main__":
     print("\nDetailed Summary for Statsmodels Linear Regression (Dataset 2):")
     show_sm_summary(xlist2, ylist2)
 
+    print("\nDetailed Summary for Statsmodels Linear Regression (Dataset 3):")
+    show_sm_summary(xlist3, ylist3)
